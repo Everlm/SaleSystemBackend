@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SaleSystem.Entities
+namespace SaleSystem.Entities.Entities
 {
     public partial class DocumentNumber
     {

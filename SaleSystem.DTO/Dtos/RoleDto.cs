@@ -1,4 +1,4 @@
-﻿namespace SaleSystem.DTO
+﻿namespace SaleSystem.DTO.Dtos
 {
     public class RoleDto
     {

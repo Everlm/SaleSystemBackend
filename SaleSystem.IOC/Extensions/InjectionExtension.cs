@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SaleSystem.DAL.Context;
 using SaleSystem.DAL.Interfaces;
 using SaleSystem.DAL.Repositories;
+using System.Reflection;
 
 namespace SaleSystem.IOC.Extensions
 {
@@ -20,6 +21,7 @@ namespace SaleSystem.IOC.Extensions
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ISaleRepository, SaleRepository>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
     }
 }

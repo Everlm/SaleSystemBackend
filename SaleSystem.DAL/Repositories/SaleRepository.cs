@@ -1,6 +1,6 @@
 ﻿using SaleSystem.DAL.Context;
 using SaleSystem.DAL.Interfaces;
-using SaleSystem.Entities;
+using SaleSystem.Entities.Entities;
 
 namespace SaleSystem.DAL.Repositories
 {
