@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SaleSystem.BLL.Interfaces;
+using SaleSystem.BLL.Services;
 using SaleSystem.DAL.Context;
 using SaleSystem.DAL.Interfaces;
 using SaleSystem.DAL.Repositories;
@@ -22,6 +24,14 @@ namespace SaleSystem.IOC.Extensions
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ISaleRepository, SaleRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IDashBoardService, DashBoardService>();
+            services.AddScoped<IMenuService, MenuService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ISaleService, SaleService>();
+            services.AddScoped<IUserService, UserService>();
         }
     }
 }

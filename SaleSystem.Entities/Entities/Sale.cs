@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SaleSystem.Entities.Entities
+﻿namespace SaleSystem.Entities.Entities
 {
     public partial class Sale
     {
