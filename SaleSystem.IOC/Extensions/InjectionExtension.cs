@@ -14,6 +14,8 @@ namespace SaleSystem.IOC.Extensions
     {
         public static void AddDependenciesInjection(this IServiceCollection services, IConfiguration configuration)
         {
+            var path = System.Reflection.Assembly.GetExecutingAssembly().Location;
+
             services.AddDbContext<DBSALEContext>(
                 options =>
                 {
@@ -23,7 +25,8 @@ namespace SaleSystem.IOC.Extensions
 
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ISaleRepository, SaleRepository>();
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddAutoMapper(Assembly.Load("SaleSystem.Utilities"));
+            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<ICategoryService, CategoryService>();

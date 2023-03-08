@@ -23,7 +23,7 @@ namespace SaleSystem.BLL.Services
             try
             {
                 var query = await _genericRepository.MakeQuery();
-                return _mapper.Map<List<CategoryDto>>(query.ToListAsync());
+                return _mapper.Map<List<CategoryDto>>(query.ToList());
             }
             catch
             {
